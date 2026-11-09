@@ -10,6 +10,13 @@
     <h1>Bienvenue sur mon site, {{ nom }} !</h1>
     <p>Ce texte provient désormais d'un vrai fichier HTML indépendant.</p>
     
+    <!-- Le formulaire d'envoi a été inséré ici 👇 -->
+    <form action="/" method="GET">
+        <label for="nom">Entrez votre prénom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <button type="submit">Valider</button>
+    </form>
+    
     <hr>
     <nav>
         <a href="/">Accueil</a> | 
