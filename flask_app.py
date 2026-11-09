@@ -34,6 +34,18 @@ def qui_suis_je():
     navigateur = request.headers.get("User-Agent")
     return f"<h1>Voici votre signature numerique :</h1><p>{navigateur}</p>"
 
+# La toute dernière route pour l'exercice 11 a été insérée ici 👇
+@app.route("/api/meteo")
+def api_meteo():
+    from flask import jsonify
+    donnees = {
+        "ville": "Paris",
+        "temperature": 18.5,
+        "conditions": "Ensoleille",
+        "humidite": 62
+    }
+    return jsonify(donnees)
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
