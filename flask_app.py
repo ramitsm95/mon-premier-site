@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request  # <-- AJOUTÉ : ", request" pour lire l'URL
 
 app = Flask(__name__)
 
@@ -8,7 +8,10 @@ app = Flask(__name__)
 # Flask exécute la fonction accueil() et renvoie son résultat au navigateur.
 @app.get("/")
 def accueil():
-    return render_template("accueil.html")
+    # LIT le paramètre "nom" dans l'adresse, ou utilise "visiteur" par défaut
+    nom_utilisateur = request.args.get("nom", "visiteur")
+    # ENVOIE ce nom au fichier HTML
+    return render_template("accueil.html", nom=nom_utilisateur)
 
 
 # ---------------------------------------------------------------
