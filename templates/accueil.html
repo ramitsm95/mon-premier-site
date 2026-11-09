@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Mon Premier Site</title>
+    <!-- La ligne ci-dessous a été ajoutée pour appliquer le design -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Bienvenue sur mon site depuis un Template !</h1>
     <p>Ce texte provient désormais d'un vrai fichier HTML indépendant.</p>
+    
+    <!-- Les lignes ci-dessous ont été ajoutées pour créer les menus cliquables -->
+    <hr>
+    <nav>
+        <a href="/">Accueil</a> | 
+        <a href="/contact">Page de Contact</a>
+    </nav>
 </body>
 </html>
