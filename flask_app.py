@@ -1,13 +1,3 @@
-# ---------------------------------------------------------------
-#  Mon premier site Web avec Flask
-# ---------------------------------------------------------------
-#  Ce fichier est le "cerveau" de votre site : c'est lui qui
-#  reçoit les demandes des navigateurs et qui fabrique les réponses.
-#
-#  Vous allez le compléter petit à petit, exercice après exercice.
-#  Les consignes sont dans le dossier "exercices/".
-# ---------------------------------------------------------------
-
 from flask import Flask
 
 app = Flask(__name__)
@@ -18,22 +8,20 @@ app = Flask(__name__)
 # Flask exécute la fonction accueil() et renvoie son résultat au navigateur.
 @app.get("/")
 def accueil():
-    return "Bienvenue sur le super site de ramitsm95 !"
+    return "<h1>Bienvenue sur mon site !</h1><p>Ce texte est maintenant structure en <strong>HTML</strong>.</p>"
 
 
 # ---------------------------------------------------------------
 #  Ajoutez vos nouvelles routes ci-dessous 👇
 # ---------------------------------------------------------------
 
-
+@app.route("/contact")
+def contact():
+    return "Pour me contacter, envoyez un e-mail à : ramitsm95@exemple.com"
 
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
 # ---------------------------------------------------------------
-@app.route("/contact")
-def contact():
-    return "Pour me contacter, envoyez un e-mail à : ramitsm95@exemple.com"
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
