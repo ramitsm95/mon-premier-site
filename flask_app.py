@@ -22,6 +22,12 @@ def accueil():
 def contact():
     return "Pour me contacter, envoyez un e-mail à : ramitsm95@exemple.com"
 
+# La nouvelle route pour l'exercice 9 a été insérée ici 👇
+@app.route("/erreur-test")
+def erreur_test():
+    from flask import abort
+    abort(404)
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
