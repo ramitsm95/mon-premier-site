@@ -28,6 +28,12 @@ def erreur_test():
     from flask import abort
     abort(404)
 
+# La nouvelle route pour l'exercice 10 a été insérée ici 👇
+@app.route("/qui-suis-je")
+def qui_suis_je():
+    navigateur = request.headers.get("User-Agent")
+    return f"<h1>Voici votre signature numerique :</h1><p>{navigateur}</p>"
+
 # ---------------------------------------------------------------
 #  Ne pas modifier : utile seulement pour lancer le site
 #  sur votre propre ordinateur (python flask_app.py)
